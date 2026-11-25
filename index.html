@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sport4All</title>
+<meta name="description" content="Sport4All · Jornada esportiva inclusiva · 4 de desembre de 2026 · Escola Virolai · Blanquerna – Universitat Ramon Llull">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>/* Identidad visual según el Manual d'identitat Blanquerna 2026:
+   paleta Coral/Granat/Taronja/Rosat/Crema, Figtree (alternativa oficial a Avantt),
+   serif de lectura para textos largos (sustituto libre de Tiempos Text),
+   portadillas coral "01. Títol", columnas número + título + subtítulo gris, paneles #F4F4F4. */
+:root{
+  --coral:#FF4747; --granat:#601018; --taronja:#FF7B5D; --rosat:#FFB7B7; --crema:#FCF7E3;
+  --bg:#FFFFFF; --panel:#F4F4F4; --panel-2:#E9E9E9;
+  --ink:#000000; --muted:#9A9A9A; --body:#2B2B2B; --line:#D6D6D6;
+  --accent:var(--coral); --accent-ink:#D92B2B; --on-accent:#FFFFFF;
+  --font:"Figtree","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --serif:"Source Serif 4","Tiempos Text",Georgia,serif;
+  --wrap:1240px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1A0508; --panel:#2A0A10; --panel-2:#3A1018;
+  --ink:#FCF7E3; --muted:#C9A4A6; --body:#EADFD8; --line:#4A1820;
+  --accent-ink:#FF7B7B; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#1A0508; --panel:#2A0A10; --panel-2:#3A1018;
+  --ink:#FCF7E3; --muted:#C9A4A6; --body:#EADFD8; --line:#4A1820;
+  --accent-ink:#FF7B7B; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+a{color:var(--accent-ink)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--granat);outline-offset:3px}
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,3vw,40px)}
+.serif{font-family:var(--serif)}
+.claim{font-weight:600;text-transform:uppercase;letter-spacing:-.015em;line-height:1.2;color:var(--coral)}
+.tbd{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.2em .6em;border:1.5px dashed currentColor;color:var(--accent-ink);vertical-align:middle;white-space:nowrap}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand img{width:42px;height:42px}
+.brand .name{display:grid;line-height:1}
+.brand .name b{font-weight:600;font-size:1.3rem;letter-spacing:-.01em;text-transform:uppercase}
+.brand .name small{font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.nav{display:flex;gap:2px}
+.nav a{font-weight:500;font-size:.95rem;text-decoration:none;color:var(--ink);padding:10px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover{color:var(--coral)}
+.nav a[aria-current="page"]{color:var(--coral);border-bottom-color:var(--coral)}
+.sym{width:34px;height:34px;border-radius:50%;background:var(--coral);flex:none}
+@media (max-width:860px){
+  .bar{flex-wrap:wrap;gap:0;padding-block:8px}
+  .sym{display:none}
+  .nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;margin-inline:-8px}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{padding:10px 10px;font-size:.9rem}
+}
+
+/* ---------- Coral chapter covers ---------- */
+.cover{background:var(--coral);color:#fff;position:relative;overflow:hidden}
+.cover .wrap{padding-block:clamp(56px,9vw,120px) clamp(40px,6vw,72px);display:grid;gap:22px;min-height:min(62vh,560px);align-content:end}
+.cover .kicker{font-size:.95rem;font-weight:500}
+.cover h1{font-weight:400;font-size:clamp(2.8rem,8vw,6.6rem);letter-spacing:-.035em;line-height:.98}
+.cover .lead{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:58ch;color:#fff}
+.cover .circle{position:absolute;right:clamp(16px,3vw,40px);top:clamp(20px,3vw,40px);width:clamp(54px,7vw,80px);height:clamp(54px,7vw,80px);border-radius:50%;background:#fff;display:grid;place-items:center}
+.cover .circle img{width:72%;height:72%}
+.cover-foot{display:flex;gap:clamp(24px,6vw,84px);font-size:.78rem;font-weight:500;text-transform:uppercase;letter-spacing:.02em}
+.cover-foot span:first-child{font-weight:600}
+
+/* Home hero (coral) */
+.hero .wrap{min-height:min(78vh,720px)}
+.hero h1{font-size:clamp(3rem,9vw,7.4rem)}
+.hero .claim{color:#fff;font-size:clamp(1.15rem,2.4vw,1.9rem)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.98rem;text-decoration:none;padding:14px 24px;border:2px solid #fff;transition:background .2s,color .2s}
+.btn-white{background:#fff;color:var(--coral)}
+.btn-white:hover{background:var(--crema)}
+.btn-line{color:#fff}
+.btn-line:hover{background:#fff;color:var(--coral)}
+.countdown{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 34px;margin-top:10px}
+.countdown > span{font-size:.85rem;text-transform:uppercase;font-weight:600;letter-spacing:.04em;padding-bottom:6px}
+.cd{display:flex;gap:26px}
+.cd div{display:grid}
+.cd b{font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.cd span{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+
+/* ---------- Facts strip ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.fact{padding:26px clamp(16px,2vw,28px);display:grid;gap:6px;min-width:0}
+.fact + .fact{border-left:1px solid var(--line)}
+.fact .k{font-size:.78rem;font-weight:500;color:var(--muted)}
+.fact .v{font-weight:600;font-size:1.15rem}
+@media (max-width:860px){.facts{grid-template-columns:1fr 1fr}.fact:nth-child(3){border-left:0}.fact:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:420px){.facts{grid-template-columns:1fr}.fact + .fact{border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- Manual-style section: number / title / grey subtitle | grey panel ---------- */
+.section{padding-block:clamp(56px,8vw,104px)}
+.section + .section{border-top:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.sec > *{min-width:0}
+.sec-head{display:grid;gap:18px;position:sticky;top:96px}
+.sec-head .num{font-size:2.2rem;font-weight:500;letter-spacing:-.02em;line-height:1}
+.sec-head h2{font-size:clamp(1.9rem,3.2vw,2.5rem);font-weight:500}
+.sec-head h2 span{display:block;color:var(--muted)}
+.sec-head p{font-size:.95rem;color:var(--body)}
+@media (max-width:900px){.sec{grid-template-columns:1fr}.sec-head{position:static}}
+.panel{background:var(--panel);padding:clamp(24px,4vw,56px)}
+.prose{display:grid;gap:1em;max-width:64ch;font-family:var(--serif);font-size:1.12rem;line-height:1.55;color:var(--body)}
+.prose strong{font-weight:600;color:var(--ink)}
+.lead-sans{font-size:clamp(1.2rem,2vw,1.55rem);font-weight:600;line-height:1.25;letter-spacing:-.01em;max-width:34ch}
+
+.quote{font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:600;line-height:1.18;letter-spacing:-.015em;max-width:22ch}
+.quote small{display:block;margin-top:16px;font-family:var(--serif);font-size:1rem;font-weight:600;letter-spacing:0;color:var(--body)}
+
+/* ---------- Grids & cards ---------- */
+.grid{display:grid;gap:clamp(10px,1.2vw,16px)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:1060px){.grid-4{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.grid-4,.grid-3,.grid-2{grid-template-columns:1fr}}
+.card{background:var(--panel);padding:clamp(22px,2.4vw,32px);display:grid;gap:12px;align-content:start;min-width:0}
+.card h3{font-size:1.35rem;font-weight:500}
+.card p{font-family:var(--serif);font-size:1rem;line-height:1.5;color:var(--body)}
+.card .k{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+/* Colour tiles (palette blocks) */
+.tile{color:#fff}
+.tile p{color:rgba(255,255,255,.92)}
+.t-coral{background:var(--coral);color:#fff}
+.t-granat{background:var(--granat);color:#fff}
+.t-taronja{background:var(--taronja);color:#fff}
+.t-rosat{background:var(--rosat);color:var(--granat)}
+.t-rosat p{color:var(--granat)}
+.t-crema{background:var(--crema);color:var(--coral)}
+.t-crema p{color:var(--granat)}
+.dot{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:1rem}
+.d-coral{background:var(--coral);color:#fff} .d-granat{background:var(--granat);color:#fff} .d-taronja{background:var(--taronja);color:#fff}
+.d-rosat{background:var(--rosat);color:var(--granat)} .d-crema{background:var(--crema);color:var(--coral)} .d-white{background:#fff;color:var(--coral)}
+.dot svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile .dot.d-white{color:var(--coral)}
+
+/* Colour band (granat) */
+.band{background:var(--granat);color:#fff;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.band > *{min-width:0}
+.band .k{font-size:.85rem;font-weight:500;color:var(--rosat)}
+.band h2{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:400;letter-spacing:-.03em;margin-block:10px 16px}
+.band p{font-family:var(--serif);font-size:1.08rem;color:rgba(255,255,255,.88);max-width:60ch}
+.band strong{color:#fff}
+.band .tbd{color:var(--rosat)}
+.partners{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.chip-logo{border:1.5px solid rgba(255,255,255,.5);padding:16px 20px;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:-.005em;text-align:center;min-width:160px}
+.chip-logo small{display:block;margin-top:6px;font-size:.66rem;letter-spacing:.06em;font-weight:600;background:rgba(255,255,255,.9);color:var(--granat);padding:3px 6px}
+.chip-logo.plain small{background:none;color:var(--rosat);padding:0}
+.band .x{font-weight:400;font-size:2rem;color:var(--rosat)}
+@media (max-width:900px){.band{grid-template-columns:1fr}}
+
+/* Mini schedule */
+.mini-sched{display:grid;border-top:1px solid var(--ink)}
+.mini-sched div{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.mini-sched time{font-weight:600;color:var(--coral);font-variant-numeric:tabular-nums}
+.more{display:inline-flex;margin-top:22px;font-weight:600;color:var(--coral);text-decoration:underline;text-underline-offset:4px}
+.more:hover{color:var(--granat)}
+
+/* ---------- Programa ---------- */
+.timeline{display:grid}
+.slot{display:grid;grid-template-columns:110px 1fr;gap:0 28px;border-top:1px solid var(--line);padding-block:24px}
+.slot:last-child{border-bottom:1px solid var(--line)}
+.slot > *{min-width:0}
+.slot .time{font-size:1.9rem;font-weight:400;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.slot .time small{display:block;margin-top:8px;font-size:.8rem;letter-spacing:0;color:var(--muted);font-weight:500}
+.slot h3{font-size:1.4rem;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.slot h3::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--c,var(--coral));flex:none}
+.slot p{font-family:var(--serif);font-size:1.04rem;color:var(--body);max-width:62ch}
+.slot.key{background:var(--panel);padding-inline:clamp(16px,2vw,24px);border-top-color:transparent}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{font-size:.8rem;font-weight:600;padding:5px 11px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+@media (max-width:600px){.slot{grid-template-columns:1fr;gap:10px}}
+
+.rotations{overflow-x:auto;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.98rem}
+th,td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+th{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+td:first-child{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.g{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.g::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.note{color:var(--body);font-family:var(--serif);font-size:.98rem;margin-top:14px}
+
+.sport ul{margin:0;padding-left:18px;font-family:var(--serif);font-size:.98rem;display:grid;gap:4px}
+.sport .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sport .zone{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;opacity:.85}
+
+.info-list{display:grid;margin:0;border-top:1px solid var(--ink)}
+.info-list div{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.info-list dt{font-weight:600}
+.info-list dd{margin:0;font-family:var(--serif);color:var(--body)}
+@media (max-width:600px){.info-list div{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- Sponsors ---------- */
+.tier{display:grid;gap:16px}
+.tier + .tier{margin-top:48px}
+.tier-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--ink);padding-bottom:12px}
+.tier-head h3{font-size:1.5rem;font-weight:500}
+.tier-head span{color:var(--muted);font-size:.92rem}
+.slot-logo{background:var(--panel);display:grid;place-items:center;text-align:center;padding:28px 18px;color:var(--muted);min-height:150px;font-size:.92rem}
+.slot-logo b{display:block;font-weight:600;font-size:1.05rem;color:var(--ink);margin-bottom:4px}
+.slot-logo.main{min-height:210px;background:var(--crema)}
+.slot-logo.main b{font-size:1.5rem;font-weight:500;color:var(--coral)}
+.slot-logo.main{color:var(--granat)}
+.contact-box{background:var(--coral);color:#fff;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.contact-box > *{min-width:0}
+.contact-box h2{font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:400;letter-spacing:-.03em;margin-block:10px 14px}
+.contact-box p{font-family:var(--serif);font-size:1.08rem}
+.contact-box .k{font-size:.85rem;font-weight:500}
+.contact-lines{display:grid;gap:12px}
+.contact-lines div{display:grid;gap:4px;padding:16px 18px;background:#fff;color:var(--ink)}
+.contact-lines span{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--coral)}
+.contact-lines b{font-weight:600;word-break:break-word}
+@media (max-width:900px){.contact-box{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
+footer{background:var(--coral);color:#fff;padding-block:56px 30px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot > *{min-width:0}
+.foot .big{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;text-transform:uppercase;letter-spacing:-.015em;line-height:1.1}
+.foot h4{font-size:.85rem;font-weight:600;margin-bottom:12px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{color:#fff;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot p{font-size:.95rem;margin-top:14px;max-width:42ch}
+.fine{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px clamp(24px,6vw,84px);font-size:.78rem;font-weight:500;text-transform:uppercase}
+.fine span:first-child{font-weight:600}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+
+.view{animation:fade .3s ease}
+@keyframes fade{from{opacity:.5}to{opacity:1}}
+
+/* ---------- v2: marca sin emblema, idiomas, equipo, puntuación ---------- */
+.lang-root[hidden]{display:none!important}
+.brand .word{font-weight:800;font-size:1.55rem;letter-spacing:-.035em;text-transform:none;color:var(--ink);line-height:1}
+.brand .word em{font-style:normal;color:var(--coral)}
+.hright{display:flex;align-items:center;gap:18px}
+.blq{height:40px;width:auto;display:block}
+:root[data-theme="dark"] .blq{background:#fff;padding:4px 8px;height:44px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .blq{background:#fff;padding:4px 8px;height:44px}}
+.langs{display:flex;border:1px solid var(--line)}
+.langs button{font:600 .78rem/1 var(--font);letter-spacing:.04em;padding:8px 10px;background:none;border:0;color:var(--muted);cursor:pointer}
+.langs button + button{border-left:1px solid var(--line)}
+.langs button[aria-pressed="true"]{background:var(--coral);color:#fff}
+.langs button:hover:not([aria-pressed="true"]){color:var(--ink)}
+@media (max-width:860px){
+  .hright{gap:10px}
+  .blq{height:30px}
+  .brand .word{font-size:1.3rem}
+}
+@media (max-width:420px){.blq{display:none}}
+.cd-done{font-size:1.1rem;font-weight:600}
+
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.numb{display:grid;gap:6px;padding:20px 16px 4px 0}
+.numb b{font-size:clamp(2.4rem,4vw,3.4rem);font-weight:500;letter-spacing:-.04em;line-height:1;color:var(--coral)}
+.numb span{font-size:.9rem;color:var(--body)}
+@media (max-width:700px){.nums{grid-template-columns:1fr 1fr}}
+.quote{color:var(--coral)}
+
+.av{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-weight:600;font-size:.9rem;flex:none;letter-spacing:.02em}
+.av.big{width:72px;height:72px;font-size:1.4rem;background:var(--granat)}
+.prof{display:flex;align-items:center;gap:20px;background:var(--crema);padding:clamp(20px,3vw,32px)}
+.prof .k{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--coral)}
+.prof h3{font-size:1.7rem;font-weight:500;color:var(--granat);margin-top:4px}
+.list-k{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:12px}
+.team{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.team li{display:flex;align-items:center;gap:12px;background:var(--panel);padding:14px 16px;font-weight:600;min-width:0}
+.team li:nth-child(3n+2) .av{background:var(--granat)}
+.team li:nth-child(3n) .av{background:var(--taronja)}
+@media (max-width:1000px){.team{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.team{grid-template-columns:1fr}}
+
+.chip-logo.white{background:#fff;border-color:#fff;padding:12px 16px}
+.chip-logo.white img{height:56px;width:auto;display:block}
+a.chip-logo{color:#fff;text-decoration:none}
+a.chip-logo:hover{background:rgba(255,255,255,.1)}
+.chip-logo.day{font-size:3rem;font-weight:400;letter-spacing:-.03em;line-height:1}
+
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:1.04rem;color:var(--body)}
+.checks li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--coral);flex:none;transform:translateY(-1px)}
+.g::before{background:var(--coral)}
+.sport .skills{font-family:var(--font);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,.35)}
+.sport{grid-template-rows:auto auto auto 1fr auto}
+.fig{margin:0}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-size:.85rem;color:var(--muted);margin-top:10px}
+
+.score{display:grid;gap:22px}
+.srow{display:grid;gap:8px}
+.slabel{display:flex;justify-content:space-between;gap:12px;font-weight:600}
+.slabel b{color:var(--coral);white-space:nowrap}
+.sbar{height:12px;background:var(--panel-2)}
+.sbar i{display:block;height:100%;background:var(--coral)}
+.srow:last-of-type .sbar i{background:var(--granat)}
+.stotal{display:flex;justify-content:space-between;border-top:1px solid var(--ink);padding-top:16px;font-weight:600;font-size:1.2rem}
+
+.bignum{font-size:3rem;font-weight:500;letter-spacing:-.04em;line-height:1;color:var(--coral)}
+.areas .card .k{color:var(--coral)}
+.sponsor{background:var(--panel);min-height:180px;display:grid;place-items:center;align-content:center;gap:8px;text-align:center;padding:28px 20px;text-decoration:none;color:inherit}
+.sponsor b{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.sponsor span{font-size:.85rem;color:var(--muted)}
+.sponsor img{height:70px;width:auto;background:#fff;padding:6px 10px}
+a.sponsor:hover b{color:var(--coral)}
+.foot-logo{margin-top:18px;background:#fff;display:inline-block;padding:10px 14px}
+.foot-logo img{height:48px;width:auto;display:block}
+</style>
+</head>
+<body>
+
+<div class="lang-root" data-lang="ca" lang="ca" hidden>
+<header class="site-header"><div class="wrap bar">
+<a class="brand" href="#ca-inicio"><span class="word">Sport<em>4</em>All</span></a>
+<nav class="nav" aria-label="Inici"><a href="#ca-inicio" data-view="inicio">Inici</a><a href="#ca-programa" data-view="programa">Programa</a><a href="#ca-organizacion" data-view="organizacion">Organització</a><a href="#ca-patrocinadores" data-view="patrocinadores">Patrocinadors</a></nav>
+<div class="hright"><div class="langs" role="group" aria-label="Idioma"><button type="button" data-set-lang="ca" aria-pressed=true>CA</button><button type="button" data-set-lang="es" aria-pressed=false>ES</button><button type="button" data-set-lang="en" aria-pressed=false>EN</button></div>
+<img class="blq" src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div>
+</div></header>
+<main>
+<section class="view" data-view="inicio" id="ca-inicio">
+<div class="cover hero"><div class="wrap">
+<p class="kicker">4 de desembre de 2026 · Dia Internacional de les Persones amb Discapacitat</p><h1>Un mateix camp.<br>Un mateix equip.<br>Per a tothom.</h1><p class="claim">L'esport no deixa ningú fora</p>
+<p class="lead">Sport4All és una jornada esportiva inclusiva per a l'alumnat de 5è de Primària de l'Escola Virolai, organitzada per estudiants de Sports Management de Blanquerna – Universitat Ramon Llull amb motiu del Dia Internacional de les Persones amb Discapacitat.</p>
+<div class="btns"><a class="btn btn-white" href="#ca-programa">Veure el programa →</a><a class="btn btn-line" href="#ca-equipo">L'equip</a></div>
+<div class="countdown" data-cd><span>Falten</span><div class="cd">
+<div><b data-d>–</b><span>dies</span></div><div><b data-h>–</b><span>hores</span></div><div><b data-m>–</b><span>min</span></div>
+</div></div><p class="cd-done" hidden>Avui és el dia! Gràcies a tothom per participar.</p>
+</div></div>
+<div class="wrap"><div class="facts"><div class="fact"><span class="k">Data</span><span class="v">Divendres, 4 de des. de 2026</span></div><div class="fact"><span class="k">Horari</span><span class="v">9:30 – 13:00 h</span></div><div class="fact"><span class="k">Lloc</span><span class="v">Pavelló 3 · Barcelona</span></div><div class="fact"><span class="k">Accés</span><span class="v">Esdeveniment privat · Escola Virolai</span></div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>L'esdeveniment<span>Què és Sport4All?</span></h2></div>
+<div class="grid" style="gap:clamp(24px,3vw,40px)">
+<div class="prose"><p>Sport4All neix a les aules del <strong>Grau en Sports Management de Blanquerna – Universitat Ramon Llull</strong>. És un projecte real, pensat i organitzat per estudiants, amb un objectiu clar: que els nens i nenes descobreixin l'esport adaptat i visquin la inclusió en primera persona.</p><p>El Dia Internacional de les Persones amb Discapacitat se celebra cada <strong>3 de desembre</strong>. Nosaltres ens hi sumem l'endemà, el <strong>divendres 4 de desembre</strong>, amb un matí de joc, cooperació i esport compartit.</p><p>Hi participen <strong>54 alumnes de 5è de Primària de l'Escola Virolai</strong>, repartits en sis equips. Aquí no hi ha eliminacions: es puntua sobretot el treball en equip, la participació i la inclusió.</p></div>
+<div class="nums"><div class="numb"><b>54</b><span>alumnes de 5è de Primària</span></div><div class="numb"><b>6</b><span>equips de 9 participants</span></div><div class="numb"><b>3</b><span>activitats inclusives</span></div><div class="numb"><b>35</b><span>persones a l'organització</span></div></div>
+<div class="panel"><p class="quote">“Quan tothom juga amb les mateixes regles, la discapacitat deixa de ser el primer que veus.”<small>Equip organitzador de Sport4All</small></p></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Participants<span>Qui hi és?</span></h2><p>Una jornada privada, pensada per a l'alumnat de l'escola i feta possible per estudiants universitaris.</p></div>
+<div class="grid grid-2"><article class="card tile t-coral"><h3>Alumnat de l'Escola Virolai</h3><p>54 nens i nenes de 5è de Primària. Són els protagonistes: juguen, cooperen i descobreixen tres activitats inclusives.</p></article><article class="card tile t-granat"><h3>Estudiants de Sports Management</h3><p>L'equip organitzador. Coordinem les activitats, expliquem les normes, controlem els horaris i supervisem tota la jornada.</p></article><article class="card tile t-taronja"><h3>Estudiants del Diploma</h3><p>20 estudiants de la Fundació Blanquerna donen suport a la supervisió pràctica de cada activitat i al material.</p></article><article class="card tile t-rosat"><h3>Voluntaris de Gestió Esportiva</h3><p>6 estudiants de la classe de Gestió Esportiva s'encarreguen del sistema de puntuació de cada equip.</p></article></div></div></div>
+
+<div class="section"><div class="wrap"><div class="band">
+<div><p class="k">La col·laboració</p><h2>Universitat i escola, a la mateixa pista</h2><p>Sport4All es fa en col·laboració amb l'<a href="https://virolai.com/" target="_blank" rel="noopener">Escola Virolai</a> de Barcelona. L'escola hi aporta el seu alumnat; la universitat, l'organització i el coneixement en gestió esportiva i esport adaptat.</p></div>
+<div class="partners"><div class="chip-logo white"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div><span class="x">+</span><a class="chip-logo" href="https://virolai.com/" target="_blank" rel="noopener">Escola Virolai<small>Barcelona</small></a></div>
+</div></div></div>
+
+<div class="section" id="ca-equipo"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>L'equip<span>Qui organitza Sport4All</span></h2><p>Projecte acadèmic del Grau en Sports Management · Facultat de Psicologia, Ciències de l'Educació i de l'Esport Blanquerna.</p></div>
+<div class="grid" style="gap:clamp(16px,2vw,24px)">
+<div class="prof"><span class="av big">AB</span><div><span class="k">Professora</span><h3>Ariadna Benet</h3></div></div>
+<div><p class="k list-k">Estudiants organitzadors</p><ul class="team"><li><span class="av">WF</span>Willy Fernández</li><li><span class="av">AM</span>Ainhoa Madoz</li><li><span class="av">ÀV</span>Àlex Valls</li><li><span class="av">CS</span>Carlos Saiz</li><li><span class="av">HO</span>Hugo Ortega</li><li><span class="av">IL</span>Ian Lobello</li><li><span class="av">JL</span>Jan Larregola</li><li><span class="av">MM</span>Mireia Martín</li><li><span class="av">IV</span>Ignasi Vilumara</li></ul></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">04</span><h2>Programa<span>El matí, en resum</span></h2><p>Tres activitats, tres rondes i una cloenda amb diplomes per a tothom.</p></div>
+<div><div class="mini-sched"><div><time>9:30</time><span>Benvinguda i acreditació</span></div><div><time>9:45</time><span>Explicació de la competició</span></div><div><time>10:15</time><span>Ronda 1</span></div><div><time>10:45</time><span>Ronda 2</span></div><div><time>11:15</time><span>Esmorzar i descans</span></div><div><time>11:45</time><span>Ronda 3</span></div><div><time>12:30</time><span>Diplomes, reconeixements i cloenda</span></div></div><a class="more" href="#ca-programa">Veure el programa complet →</a></div>
+</div></div></section>
+<section class="view" data-view="programa" id="ca-programa" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Divendres 4 de desembre de 2026 · 9:30 – 13:00 h</p><h1>01. Programa</h1><p class="lead">Horari, format de la competició i les tres activitats del matí. L'horari pot ajustar-se uns minuts el mateix dia.</p>
+<div class="cover-foot"><span>Sport4All</span><span>Horari i activitats</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Horari<span>Hora a hora</span></h2><p>Cada ronda dura 30 minuts: 5 per explicar l'activitat i les normes de seguretat, 20 per jugar i 5 per anotar la puntuació i canviar d'estació.</p></div><div class="timeline"><div class="slot"><div class="time">9:30<small>15 min</small></div><div><h3>Benvinguda i acreditació</h3><p>Arribada de l'alumnat i organització dels sis equips.</p></div></div><div class="slot"><div class="time">9:45<small>30 min</small></div><div><h3>Explicació de la competició</h3><p>Presentació de les normes, el sistema de puntuació i les rotacions.</p></div></div><div class="slot key"><div class="time">10:15<small>30 min</small></div><div><h3>Ronda 1</h3><p>Cada equip comença en una de les tres activitats.</p></div></div><div class="slot key"><div class="time">10:45<small>30 min</small></div><div><h3>Ronda 2</h3><p>Primera rotació: els equips canvien d'activitat.</p></div></div><div class="slot"><div class="time">11:15<small>30 min</small></div><div><h3>Esmorzar i descans</h3><p>Fruita, aigua i snacks per a tothom. Temps per descansar i hidratar-se.</p></div></div><div class="slot key"><div class="time">11:45<small>30 min</small></div><div><h3>Ronda 3</h3><p>Segona rotació: tots els equips completen les tres activitats.</p></div></div><div class="slot"><div class="time">12:15<small>15 min</small></div><div><h3>Càlcul de puntuacions</h3><p>L'equip de puntuació revisa i suma els resultats.</p></div></div><div class="slot"><div class="time">12:30<small>30 min</small></div><div><h3>Cloenda i reconeixements</h3><p>Diplomes, premis i classificació final.</p></div></div></div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Format<span>Com funciona la competició</span></h2><p>54 participants, 6 equips de 9. Cada equip es manté junt tot el matí i passa per les tres activitats.</p></div>
+<div class="grid" style="gap:24px">
+<div class="rotations"><table><thead><tr><th>Ronda</th><th>Goalball</th><th>Giant Ball Challenge</th><th>Build and Protect</th></tr></thead><tbody><tr><td>Ronda 1</td><td><span class="g">Equip 1 – 2</span></td><td><span class="g">Equip 3 – 4</span></td><td><span class="g">Equip 5 – 6</span></td></tr><tr><td>Ronda 2</td><td><span class="g">Equip 5 – 6</span></td><td><span class="g">Equip 1 – 2</span></td><td><span class="g">Equip 3 – 4</span></td></tr><tr><td>Ronda 3</td><td><span class="g">Equip 3 – 4</span></td><td><span class="g">Equip 5 – 6</span></td><td><span class="g">Equip 1 – 2</span></td></tr></tbody></table></div>
+<p class="note">Distribució orientativa. Tres activitats al mateix temps, amb dos equips en cada una.</p>
+<div class="panel"><p class="k list-k">Normes comunes</p><ul class="checks"><li>Tothom té un paper actiu.</li><li>No hi ha eliminacions.</li><li>Les responsabilitats es reparteixen.</li><li>Respecte pels companys, els altres equips i l'organització.</li><li>Les activitats s'adapten a cada participant.</li></ul></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>Activitats<span>Tres reptes inclusius</span></h2><p>Totes tres prioritzen la cooperació i la comunicació per damunt del resultat.</p></div>
+<div class="grid" style="gap:clamp(16px,2vw,24px)">
+<div class="grid grid-3"><article class="card sport tile t-granat"><div class="top"><span class="zone">Zona 1</span></div><h3>Goalball</h3><p>Joc d'origen paralímpic. Tots els jugadors porten antifaç i localitzen la pilota pel so dels cascavells.</p>
+<ul><li>Pilota amb cascavells, sempre rodant per terra</li><li>Dos partits de 5 min (5 contra 5 i 4 contra 4)</li><li>Límits del camp marcats amb una corda tàctil</li></ul><p class="skills">Confiança · escolta · orientació</p></article><article class="card sport tile t-coral"><div class="top"><span class="zone">Zona 2</span></div><h3>Giant Ball Challenge</h3><p>Cada equip porta una pilota gegant per un circuit passant-la entre companys situats dins de la seva anella.</p>
+<ul><li>Prohibit parlar: només gestos i senyals</li><li>Cal moure les anelles per avançar</li><li>Dos carrils paral·lels</li></ul><p class="skills">Comunicació no verbal · coordinació</p></article><article class="card sport tile t-taronja"><div class="top"><span class="zone">Zona 3</span></div><h3>Build and Protect</h3><p>Cada equip construeix una defensa al voltant de la seva cistella i intenta encistellar pilotes toves a la de l'altre equip.</p>
+<ul><li>Con, petos i blocs d'escuma</li><li>6 pilotes toves per equip</li><li>Tres jugadors amb una limitació temporal de visió o mobilitat</li></ul><p class="skills">Precisió · estratègia · treball en equip</p></article></div>
+<figure class="fig"><img src="pavello.jpg" alt="Distribució de les tres activitats al Pavelló 3." loading="lazy"><figcaption>Distribució de les tres activitats al Pavelló 3.</figcaption></figure>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">04</span><h2>Puntuació<span>Guanyar no ho és tot</span></h2><p>Cada activitat val 10 punts. Guanyar només en suma 1; els altres 9 premien com juga l'equip.</p></div>
+<div class="panel score"><div class="srow"><div class="slabel"><span>Treball en equip i comunicació</span><b>4 punts</b></div><div class="sbar"><i style="width:40%"></i></div></div><div class="srow"><div class="slabel"><span>Participació i inclusió</span><b>3 punts</b></div><div class="sbar"><i style="width:30%"></i></div></div><div class="srow"><div class="slabel"><span>Execució de l'activitat</span><b>2 punts</b></div><div class="sbar"><i style="width:20%"></i></div></div><div class="srow"><div class="slabel"><span>Guanyador de l'activitat</span><b>1 punt</b></div><div class="sbar"><i style="width:10%"></i></div></div><div class="stotal"><span>Total per activitat</span><b>10 punts</b></div></div>
+</div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">05</span><h2>Informació<span>Abans de venir</span></h2></div><dl class="info-list"><div><dt>Data i hora</dt><dd>Divendres, 4 de desembre de 2026, de 9:30 a 13:00 h.</dd></div><div><dt>Lloc</dt><dd>Pavelló 3 · Barcelona.</dd></div><div><dt>Accés</dt><dd>Esdeveniment privat per a l'alumnat de 5è de Primària de l'Escola Virolai. No és obert al públic.</dd></div><div><dt>Què cal portar</dt><dd>Roba i calçat esportiu i una ampolla d'aigua. El material el posa l'organització.</dd></div><div><dt>Esmorzar</dt><dd>Durant el descans es repartirà fruita, aigua i snacks.</dd></div><div><dt>Fotografies</dt><dd>Només es publicaran imatges de menors amb l'autorització de l'escola i de les famílies.</dd></div></dl></div></div></section>
+<section class="view" data-view="organizacion" id="ca-organizacion" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Projecte acadèmic · Blanquerna – Universitat Ramon Llull</p><h1>02. Organització</h1><p class="lead">35 persones fan possible Sport4All: estudiants organitzadors, estudiants del Diploma i voluntaris de Gestió Esportiva.</p>
+<div class="cover-foot"><span>Sport4All</span><span>L'equip humà</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Rols<span>Qui fa què</span></h2></div><div class="grid grid-3"><article class="card"><b class="bignum">9</b><h3>Organitzadors</h3><p>Estudiants de Sports Management. Coordinen les activitats, expliquen les normes, controlen els temps i supervisen la jornada.</p></article><article class="card"><b class="bignum">20</b><h3>Estudiants del Diploma</h3><p>De la Fundació Blanquerna. Supervisen la part pràctica de les activitats i ajuden amb el material i l'organització.</p></article><article class="card"><b class="bignum">6</b><h3>Voluntaris de Gestió Esportiva</h3><p>Avaluen cada equip amb una rúbrica específica per activitat i registren la puntuació.</p></article></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Àrees<span>Com ens organitzem el dia</span></h2><p>Cada activitat té el seu equip fix, que no rota, per conèixer bé la seva estació.</p></div><div class="grid grid-3 areas"><article class="card"><span class="k">01</span><h3>Goalball</h3><p>4 estudiants del Diploma · 1 voluntari de puntuació · coordina Mireia</p></article><article class="card"><span class="k">02</span><h3>Giant Ball Challenge</h3><p>4 estudiants del Diploma · 1 voluntari de puntuació · coordina Ainhoa</p></article><article class="card"><span class="k">03</span><h3>Build and Protect</h3><p>4 estudiants del Diploma · 1 voluntari de puntuació · coordina Ian</p></article><article class="card"><span class="k">04</span><h3>Benvinguda i acreditació</h3><p>Rebuda de l'alumnat, acreditacions i lliurament de materials a l'inici i al final.</p></article><article class="card"><span class="k">05</span><h3>Esmorzar</h3><p>Durant el descans: repartiment de fruita, aigua i snacks.</p></article></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>Missió<span>Per què ho fem</span></h2></div>
+<div class="grid" style="gap:clamp(24px,3vw,40px)"><div class="prose"><p>Volem <strong>donar visibilitat a l'esport adaptat</strong> i <strong>trencar prejudicis des de la infància</strong>, demostrant que una activitat esportiva es pot dissenyar perquè ningú es quedi a la graderia.</p><p>Com a futurs gestors esportius, també aprenem a organitzar esdeveniments pensant en l'accessibilitat des del primer dia, no com un afegit al final.</p></div><div class="grid grid-2"><div class="card tile t-coral"><h3>Inclusió</h3><p>Totes les activitats estan pensades per jugar junts.</p></div><div class="card tile t-granat"><h3>Participació</h3><p>Tothom té un paper actiu. No hi ha eliminacions.</p></div><div class="card tile t-taronja"><h3>Cooperació</h3><p>Es puntua com juga l'equip, no només el resultat.</p></div><div class="card tile t-rosat"><h3>Aprenentatge</h3><p>Els nens descobreixen l'esport adaptat; els universitaris aprenen fent.</p></div></div></div></div></div>
+<div class="section"><div class="wrap"><div class="band">
+<div><p class="k">3 de desembre</p><h2>Per què el Dia Internacional de les Persones amb Discapacitat?</h2><p>Les Nacions Unides el van proclamar el 1992 per promoure els drets i el benestar de les persones amb discapacitat en tots els àmbits de la societat, també en l'esport. Celebrar-ho jugant junts és la nostra manera de sumar-nos-hi.</p></div>
+<div class="partners"><div class="chip-logo plain day">3·12<small>Des de 1992</small></div></div></div></div></div></section>
+<section class="view" data-view="patrocinadores" id="ca-patrocinadores" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Patrocinadors i col·laboradors</p><h1>03. Patrocinadors</h1><p class="lead">Gràcies a les empreses i entitats que donen suport a Sport4All i el fan possible.</p>
+<div class="cover-foot"><span>Sport4All</span><span>Gràcies per fer-ho possible</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Patrocinadors<span>Amb el suport de</span></h2></div><div class="grid grid-3"><div class="sponsor"><b>Mercat El Carmel</b><span>Mercat municipal · Barcelona</span></div><div class="sponsor"><b>Ruido</b><span>Patrocinador</span></div><div class="sponsor"><b>Dental Horta</b><span>Clínica dental · Barcelona</span></div></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Col·laboradors<span>Institucions</span></h2></div><div class="grid grid-2"><div class="sponsor"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"><span>Universitat organitzadora</span></div><a class="sponsor" href="https://virolai.com/" target="_blank" rel="noopener"><b>Escola Virolai</b><span>Escola participant</span></a></div></div></div>
+<div class="section"><div class="wrap"><div class="band"><div><h2>Vols sumar-te a Sport4All?</h2><p>Encara som a temps d'afegir nous patrocinadors i col·laboradors. Si la teva empresa vol donar suport a l'esport inclusiu, parla amb l'equip organitzador.</p></div></div></div></div></section>
+</main>
+<footer><div class="wrap"><div class="foot">
+<div><p class="big">Un mateix camp.<br>Per a tothom.</p><p>Jornada esportiva inclusiva · 4 de desembre de 2026 · Dia Internacional de les Persones amb Discapacitat.</p></div>
+<div><h4>Seccions</h4><ul><li><a href="#ca-inicio">Inici</a></li><li><a href="#ca-programa">Programa</a></li><li><a href="#ca-organizacion">Organització</a></li><li><a href="#ca-patrocinadores">Patrocinadors</a></li></ul></div>
+<div><h4>Organitza</h4><p style="margin-top:0">Estudiants del Grau en Sports Management · Facultat de Psicologia, Ciències de l'Educació i de l'Esport Blanquerna – Universitat Ramon Llull.</p><div class="foot-logo"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div></div>
+</div><div class="fine"><span>Sport4All</span><span>Sport4All 2026</span><span>Projecte acadèmic · Barcelona</span></div></div></footer>
+</div>
+<div class="lang-root" data-lang="es" lang="es" hidden>
+<header class="site-header"><div class="wrap bar">
+<a class="brand" href="#es-inicio"><span class="word">Sport<em>4</em>All</span></a>
+<nav class="nav" aria-label="Inicio"><a href="#es-inicio" data-view="inicio">Inicio</a><a href="#es-programa" data-view="programa">Programa</a><a href="#es-organizacion" data-view="organizacion">Organización</a><a href="#es-patrocinadores" data-view="patrocinadores">Patrocinadores</a></nav>
+<div class="hright"><div class="langs" role="group" aria-label="Idioma"><button type="button" data-set-lang="ca" aria-pressed=false>CA</button><button type="button" data-set-lang="es" aria-pressed=true>ES</button><button type="button" data-set-lang="en" aria-pressed=false>EN</button></div>
+<img class="blq" src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div>
+</div></header>
+<main>
+<section class="view" data-view="inicio" id="es-inicio">
+<div class="cover hero"><div class="wrap">
+<p class="kicker">4 de diciembre de 2026 · Día Internacional de las Personas con Discapacidad</p><h1>Un mismo campo.<br>Un mismo equipo.<br>Para todos.</h1><p class="claim">El deporte no deja a nadie fuera</p>
+<p class="lead">Sport4All es una jornada deportiva inclusiva para el alumnado de 5.º de Primaria de la Escola Virolai, organizada por estudiantes de Sports Management de Blanquerna – Universitat Ramon Llull con motivo del Día Internacional de las Personas con Discapacidad.</p>
+<div class="btns"><a class="btn btn-white" href="#es-programa">Ver el programa →</a><a class="btn btn-line" href="#es-equipo">El equipo</a></div>
+<div class="countdown" data-cd><span>Faltan</span><div class="cd">
+<div><b data-d>–</b><span>días</span></div><div><b data-h>–</b><span>horas</span></div><div><b data-m>–</b><span>min</span></div>
+</div></div><p class="cd-done" hidden>¡Hoy es el día! Gracias a todos por participar.</p>
+</div></div>
+<div class="wrap"><div class="facts"><div class="fact"><span class="k">Fecha</span><span class="v">Viernes, 4 de dic. de 2026</span></div><div class="fact"><span class="k">Horario</span><span class="v">9:30 – 13:00 h</span></div><div class="fact"><span class="k">Lugar</span><span class="v">Pavelló 3 · Barcelona</span></div><div class="fact"><span class="k">Acceso</span><span class="v">Evento privado · Escola Virolai</span></div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>El evento<span>¿Qué es Sport4All?</span></h2></div>
+<div class="grid" style="gap:clamp(24px,3vw,40px)">
+<div class="prose"><p>Sport4All nace en las aulas del <strong>Grado en Sports Management de Blanquerna – Universitat Ramon Llull</strong>. Es un proyecto real, pensado y organizado por estudiantes, con un objetivo claro: que los niños y niñas descubran el deporte adaptado y vivan la inclusión en primera persona.</p><p>El Día Internacional de las Personas con Discapacidad se celebra cada <strong>3 de diciembre</strong>. Nosotros nos sumamos al día siguiente, el <strong>viernes 4 de diciembre</strong>, con una mañana de juego, cooperación y deporte compartido.</p><p>Participan <strong>54 alumnos de 5.º de Primaria de la Escola Virolai</strong>, repartidos en seis equipos. Aquí no hay eliminaciones: se puntúa sobre todo el trabajo en equipo, la participación y la inclusión.</p></div>
+<div class="nums"><div class="numb"><b>54</b><span>alumnos de 5.º de Primaria</span></div><div class="numb"><b>6</b><span>equipos de 9 participantes</span></div><div class="numb"><b>3</b><span>actividades inclusivas</span></div><div class="numb"><b>35</b><span>personas en la organización</span></div></div>
+<div class="panel"><p class="quote">“Cuando todos juegan con las mismas reglas, la discapacidad deja de ser lo primero que ves.”<small>Equipo organizador de Sport4All</small></p></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Participantes<span>¿Quién participa?</span></h2><p>Una jornada privada, pensada para el alumnado de la escuela y hecha posible por estudiantes universitarios.</p></div>
+<div class="grid grid-2"><article class="card tile t-coral"><h3>Alumnado de la Escola Virolai</h3><p>54 niños y niñas de 5.º de Primaria. Son los protagonistas: juegan, cooperan y descubren tres actividades inclusivas.</p></article><article class="card tile t-granat"><h3>Estudiantes de Sports Management</h3><p>El equipo organizador. Coordinamos las actividades, explicamos las normas, controlamos los horarios y supervisamos toda la jornada.</p></article><article class="card tile t-taronja"><h3>Estudiantes del Diploma</h3><p>20 estudiantes de la Fundació Blanquerna apoyan la supervisión práctica de cada actividad y el material.</p></article><article class="card tile t-rosat"><h3>Voluntarios de Gestión Deportiva</h3><p>6 estudiantes de la clase de Gestión Deportiva se encargan del sistema de puntuación de cada equipo.</p></article></div></div></div>
+
+<div class="section"><div class="wrap"><div class="band">
+<div><p class="k">La colaboración</p><h2>Universidad y escuela, en la misma pista</h2><p>Sport4All se hace en colaboración con la <a href="https://virolai.com/" target="_blank" rel="noopener">Escola Virolai</a> de Barcelona. La escuela aporta a su alumnado; la universidad, la organización y el conocimiento en gestión deportiva y deporte adaptado.</p></div>
+<div class="partners"><div class="chip-logo white"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div><span class="x">+</span><a class="chip-logo" href="https://virolai.com/" target="_blank" rel="noopener">Escola Virolai<small>Barcelona</small></a></div>
+</div></div></div>
+
+<div class="section" id="es-equipo"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>El equipo<span>Quién organiza Sport4All</span></h2><p>Proyecto académico del Grado en Sports Management · Facultad de Psicología, Ciencias de la Educación y del Deporte Blanquerna.</p></div>
+<div class="grid" style="gap:clamp(16px,2vw,24px)">
+<div class="prof"><span class="av big">AB</span><div><span class="k">Profesora</span><h3>Ariadna Benet</h3></div></div>
+<div><p class="k list-k">Estudiantes organizadores</p><ul class="team"><li><span class="av">WF</span>Willy Fernández</li><li><span class="av">AM</span>Ainhoa Madoz</li><li><span class="av">ÀV</span>Àlex Valls</li><li><span class="av">CS</span>Carlos Saiz</li><li><span class="av">HO</span>Hugo Ortega</li><li><span class="av">IL</span>Ian Lobello</li><li><span class="av">JL</span>Jan Larregola</li><li><span class="av">MM</span>Mireia Martín</li><li><span class="av">IV</span>Ignasi Vilumara</li></ul></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">04</span><h2>Programa<span>La mañana, en resumen</span></h2><p>Tres actividades, tres rondas y un cierre con diplomas para todos.</p></div>
+<div><div class="mini-sched"><div><time>9:30</time><span>Bienvenida y acreditación</span></div><div><time>9:45</time><span>Explicación de la competición</span></div><div><time>10:15</time><span>Ronda 1</span></div><div><time>10:45</time><span>Ronda 2</span></div><div><time>11:15</time><span>Desayuno y descanso</span></div><div><time>11:45</time><span>Ronda 3</span></div><div><time>12:30</time><span>Diplomas, reconocimientos y cierre</span></div></div><a class="more" href="#es-programa">Ver el programa completo →</a></div>
+</div></div></section>
+<section class="view" data-view="programa" id="es-programa" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Viernes 4 de diciembre de 2026 · 9:30 – 13:00 h</p><h1>01. Programa</h1><p class="lead">Horario, formato de la competición y las tres actividades de la mañana. El horario puede ajustarse unos minutos el mismo día.</p>
+<div class="cover-foot"><span>Sport4All</span><span>Horario y actividades</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Horario<span>Hora a hora</span></h2><p>Cada ronda dura 30 minutos: 5 para explicar la actividad y las normas de seguridad, 20 para jugar y 5 para anotar la puntuación y cambiar de estación.</p></div><div class="timeline"><div class="slot"><div class="time">9:30<small>15 min</small></div><div><h3>Bienvenida y acreditación</h3><p>Llegada del alumnado y organización de los seis equipos.</p></div></div><div class="slot"><div class="time">9:45<small>30 min</small></div><div><h3>Explicación de la competición</h3><p>Presentación de las normas, el sistema de puntuación y las rotaciones.</p></div></div><div class="slot key"><div class="time">10:15<small>30 min</small></div><div><h3>Ronda 1</h3><p>Cada equipo empieza en una de las tres actividades.</p></div></div><div class="slot key"><div class="time">10:45<small>30 min</small></div><div><h3>Ronda 2</h3><p>Primera rotación: los equipos cambian de actividad.</p></div></div><div class="slot"><div class="time">11:15<small>30 min</small></div><div><h3>Desayuno y descanso</h3><p>Fruta, agua y snacks para todos. Tiempo para descansar e hidratarse.</p></div></div><div class="slot key"><div class="time">11:45<small>30 min</small></div><div><h3>Ronda 3</h3><p>Segunda rotación: todos los equipos completan las tres actividades.</p></div></div><div class="slot"><div class="time">12:15<small>15 min</small></div><div><h3>Cálculo de puntuaciones</h3><p>El equipo de puntuación revisa y suma los resultados.</p></div></div><div class="slot"><div class="time">12:30<small>30 min</small></div><div><h3>Cierre y reconocimientos</h3><p>Diplomas, premios y clasificación final.</p></div></div></div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Formato<span>Cómo funciona la competición</span></h2><p>54 participantes, 6 equipos de 9. Cada equipo se mantiene unido toda la mañana y pasa por las tres actividades.</p></div>
+<div class="grid" style="gap:24px">
+<div class="rotations"><table><thead><tr><th>Ronda</th><th>Goalball</th><th>Giant Ball Challenge</th><th>Build and Protect</th></tr></thead><tbody><tr><td>Ronda 1</td><td><span class="g">Equipo 1 – 2</span></td><td><span class="g">Equipo 3 – 4</span></td><td><span class="g">Equipo 5 – 6</span></td></tr><tr><td>Ronda 2</td><td><span class="g">Equipo 5 – 6</span></td><td><span class="g">Equipo 1 – 2</span></td><td><span class="g">Equipo 3 – 4</span></td></tr><tr><td>Ronda 3</td><td><span class="g">Equipo 3 – 4</span></td><td><span class="g">Equipo 5 – 6</span></td><td><span class="g">Equipo 1 – 2</span></td></tr></tbody></table></div>
+<p class="note">Distribución orientativa. Tres actividades a la vez, con dos equipos en cada una.</p>
+<div class="panel"><p class="k list-k">Normas comunes</p><ul class="checks"><li>Todos tienen un papel activo.</li><li>No hay eliminaciones.</li><li>Las responsabilidades se reparten.</li><li>Respeto a compañeros, otros equipos y organización.</li><li>Las actividades se adaptan a cada participante.</li></ul></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>Actividades<span>Tres retos inclusivos</span></h2><p>Las tres priorizan la cooperación y la comunicación por encima del resultado.</p></div>
+<div class="grid" style="gap:clamp(16px,2vw,24px)">
+<div class="grid grid-3"><article class="card sport tile t-granat"><div class="top"><span class="zone">Zona 1</span></div><h3>Goalball</h3><p>Juego de origen paralímpico. Todos los jugadores llevan antifaz y localizan el balón por el sonido de los cascabeles.</p>
+<ul><li>Balón con cascabeles, siempre rodando por el suelo</li><li>Dos partidos de 5 min (5 contra 5 y 4 contra 4)</li><li>Límites del campo marcados con una cuerda táctil</li></ul><p class="skills">Confianza · escucha · orientación</p></article><article class="card sport tile t-coral"><div class="top"><span class="zone">Zona 2</span></div><h3>Giant Ball Challenge</h3><p>Cada equipo lleva una pelota gigante por un circuito pasándola entre compañeros situados dentro de su aro.</p>
+<ul><li>Prohibido hablar: solo gestos y señales</li><li>Hay que mover los aros para avanzar</li><li>Dos carriles paralelos</li></ul><p class="skills">Comunicación no verbal · coordinación</p></article><article class="card sport tile t-taronja"><div class="top"><span class="zone">Zona 3</span></div><h3>Build and Protect</h3><p>Cada equipo construye una defensa alrededor de su cesta e intenta encestar pelotas blandas en la del otro equipo.</p>
+<ul><li>Conos, petos y bloques de espuma</li><li>6 pelotas blandas por equipo</li><li>Tres jugadores con una limitación temporal de visión o movilidad</li></ul><p class="skills">Precisión · estrategia · trabajo en equipo</p></article></div>
+<figure class="fig"><img src="pavello.jpg" alt="Distribución de las tres actividades en el Pavelló 3." loading="lazy"><figcaption>Distribución de las tres actividades en el Pavelló 3.</figcaption></figure>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">04</span><h2>Puntuación<span>Ganar no lo es todo</span></h2><p>Cada actividad vale 10 puntos. Ganar solo suma 1; los otros 9 premian cómo juega el equipo.</p></div>
+<div class="panel score"><div class="srow"><div class="slabel"><span>Trabajo en equipo y comunicación</span><b>4 puntos</b></div><div class="sbar"><i style="width:40%"></i></div></div><div class="srow"><div class="slabel"><span>Participación e inclusión</span><b>3 puntos</b></div><div class="sbar"><i style="width:30%"></i></div></div><div class="srow"><div class="slabel"><span>Ejecución de la actividad</span><b>2 puntos</b></div><div class="sbar"><i style="width:20%"></i></div></div><div class="srow"><div class="slabel"><span>Ganador de la actividad</span><b>1 punto</b></div><div class="sbar"><i style="width:10%"></i></div></div><div class="stotal"><span>Total por actividad</span><b>10 puntos</b></div></div>
+</div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">05</span><h2>Información<span>Antes de venir</span></h2></div><dl class="info-list"><div><dt>Fecha y hora</dt><dd>Viernes, 4 de diciembre de 2026, de 9:30 a 13:00 h.</dd></div><div><dt>Lugar</dt><dd>Pavelló 3 · Barcelona.</dd></div><div><dt>Acceso</dt><dd>Evento privado para el alumnado de 5.º de Primaria de la Escola Virolai. No está abierto al público.</dd></div><div><dt>Qué traer</dt><dd>Ropa y calzado deportivo y una botella de agua. El material lo pone la organización.</dd></div><div><dt>Desayuno</dt><dd>Durante el descanso se repartirá fruta, agua y snacks.</dd></div><div><dt>Fotografías</dt><dd>Solo se publicarán imágenes de menores con la autorización de la escuela y de las familias.</dd></div></dl></div></div></section>
+<section class="view" data-view="organizacion" id="es-organizacion" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Proyecto académico · Blanquerna – Universitat Ramon Llull</p><h1>02. Organización</h1><p class="lead">35 personas hacen posible Sport4All: estudiantes organizadores, estudiantes del Diploma y voluntarios de Gestión Deportiva.</p>
+<div class="cover-foot"><span>Sport4All</span><span>El equipo humano</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Roles<span>Quién hace qué</span></h2></div><div class="grid grid-3"><article class="card"><b class="bignum">9</b><h3>Organizadores</h3><p>Estudiantes de Sports Management. Coordinan las actividades, explican las normas, controlan los tiempos y supervisan la jornada.</p></article><article class="card"><b class="bignum">20</b><h3>Estudiantes del Diploma</h3><p>De la Fundació Blanquerna. Supervisan la parte práctica de las actividades y ayudan con el material y la organización.</p></article><article class="card"><b class="bignum">6</b><h3>Voluntarios de Gestión Deportiva</h3><p>Evalúan a cada equipo con una rúbrica específica por actividad y registran la puntuación.</p></article></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Áreas<span>Cómo nos organizamos el día</span></h2><p>Cada actividad tiene su equipo fijo, que no rota, para conocer bien su estación.</p></div><div class="grid grid-3 areas"><article class="card"><span class="k">01</span><h3>Goalball</h3><p>4 estudiantes del Diploma · 1 voluntario de puntuación · coordina Mireia</p></article><article class="card"><span class="k">02</span><h3>Giant Ball Challenge</h3><p>4 estudiantes del Diploma · 1 voluntario de puntuación · coordina Ainhoa</p></article><article class="card"><span class="k">03</span><h3>Build and Protect</h3><p>4 estudiantes del Diploma · 1 voluntario de puntuación · coordina Ian</p></article><article class="card"><span class="k">04</span><h3>Bienvenida y acreditación</h3><p>Recepción del alumnado, acreditaciones y entrega de materiales al inicio y al final.</p></article><article class="card"><span class="k">05</span><h3>Desayuno</h3><p>Durante el descanso: reparto de fruta, agua y snacks.</p></article></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>Misión<span>Por qué lo hacemos</span></h2></div>
+<div class="grid" style="gap:clamp(24px,3vw,40px)"><div class="prose"><p>Queremos <strong>dar visibilidad al deporte adaptado</strong> y <strong>romper prejuicios desde la infancia</strong>, demostrando que una actividad deportiva puede diseñarse para que nadie se quede en la grada.</p><p>Como futuros gestores deportivos, también aprendemos a organizar eventos pensando en la accesibilidad desde el primer día, no como un añadido al final.</p></div><div class="grid grid-2"><div class="card tile t-coral"><h3>Inclusión</h3><p>Todas las actividades están pensadas para jugar juntos.</p></div><div class="card tile t-granat"><h3>Participación</h3><p>Todos tienen un papel activo. No hay eliminaciones.</p></div><div class="card tile t-taronja"><h3>Cooperación</h3><p>Se puntúa cómo juega el equipo, no solo el resultado.</p></div><div class="card tile t-rosat"><h3>Aprendizaje</h3><p>Los niños descubren el deporte adaptado; los universitarios aprenden haciendo.</p></div></div></div></div></div>
+<div class="section"><div class="wrap"><div class="band">
+<div><p class="k">3 de diciembre</p><h2>¿Por qué el Día Internacional de las Personas con Discapacidad?</h2><p>Naciones Unidas lo proclamó en 1992 para promover los derechos y el bienestar de las personas con discapacidad en todos los ámbitos de la sociedad, también en el deporte. Celebrarlo jugando juntos es nuestra manera de sumarnos.</p></div>
+<div class="partners"><div class="chip-logo plain day">3·12<small>Desde 1992</small></div></div></div></div></div></section>
+<section class="view" data-view="patrocinadores" id="es-patrocinadores" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Patrocinadores y colaboradores</p><h1>03. Patrocinadores</h1><p class="lead">Gracias a las empresas y entidades que apoyan Sport4All y lo hacen posible.</p>
+<div class="cover-foot"><span>Sport4All</span><span>Gracias por hacerlo posible</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Patrocinadores<span>Con el apoyo de</span></h2></div><div class="grid grid-3"><div class="sponsor"><b>Mercat El Carmel</b><span>Mercado municipal · Barcelona</span></div><div class="sponsor"><b>Ruido</b><span>Patrocinador</span></div><div class="sponsor"><b>Dental Horta</b><span>Clínica dental · Barcelona</span></div></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Colaboradores<span>Instituciones</span></h2></div><div class="grid grid-2"><div class="sponsor"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"><span>Universidad organizadora</span></div><a class="sponsor" href="https://virolai.com/" target="_blank" rel="noopener"><b>Escola Virolai</b><span>Escuela participante</span></a></div></div></div>
+<div class="section"><div class="wrap"><div class="band"><div><h2>¿Quieres sumarte a Sport4All?</h2><p>Aún estamos a tiempo de añadir nuevos patrocinadores y colaboradores. Si tu empresa quiere apoyar el deporte inclusivo, habla con el equipo organizador.</p></div></div></div></div></section>
+</main>
+<footer><div class="wrap"><div class="foot">
+<div><p class="big">Un mismo campo.<br>Para todos.</p><p>Jornada deportiva inclusiva · 4 de diciembre de 2026 · Día Internacional de las Personas con Discapacidad.</p></div>
+<div><h4>Secciones</h4><ul><li><a href="#es-inicio">Inicio</a></li><li><a href="#es-programa">Programa</a></li><li><a href="#es-organizacion">Organización</a></li><li><a href="#es-patrocinadores">Patrocinadores</a></li></ul></div>
+<div><h4>Organiza</h4><p style="margin-top:0">Estudiantes del Grado en Sports Management · Facultad de Psicología, Ciencias de la Educación y del Deporte Blanquerna – Universitat Ramon Llull.</p><div class="foot-logo"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div></div>
+</div><div class="fine"><span>Sport4All</span><span>Sport4All 2026</span><span>Proyecto académico · Barcelona</span></div></div></footer>
+</div>
+<div class="lang-root" data-lang="en" lang="en" hidden>
+<header class="site-header"><div class="wrap bar">
+<a class="brand" href="#en-inicio"><span class="word">Sport<em>4</em>All</span></a>
+<nav class="nav" aria-label="Home"><a href="#en-inicio" data-view="inicio">Home</a><a href="#en-programa" data-view="programa">Programme</a><a href="#en-organizacion" data-view="organizacion">Organisation</a><a href="#en-patrocinadores" data-view="patrocinadores">Sponsors</a></nav>
+<div class="hright"><div class="langs" role="group" aria-label="Language"><button type="button" data-set-lang="ca" aria-pressed=false>CA</button><button type="button" data-set-lang="es" aria-pressed=false>ES</button><button type="button" data-set-lang="en" aria-pressed=true>EN</button></div>
+<img class="blq" src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div>
+</div></header>
+<main>
+<section class="view" data-view="inicio" id="en-inicio">
+<div class="cover hero"><div class="wrap">
+<p class="kicker">4 December 2026 · International Day of Persons with Disabilities</p><h1>One court.<br>One team.<br>For everyone.</h1><p class="claim">Sport leaves no one behind</p>
+<p class="lead">Sport4All is an inclusive sports day for Year 5 primary pupils from Escola Virolai, organised by Sports Management students at Blanquerna – Universitat Ramon Llull to mark the International Day of Persons with Disabilities.</p>
+<div class="btns"><a class="btn btn-white" href="#en-programa">See the programme →</a><a class="btn btn-line" href="#en-equipo">The team</a></div>
+<div class="countdown" data-cd><span>Starts in</span><div class="cd">
+<div><b data-d>–</b><span>days</span></div><div><b data-h>–</b><span>hours</span></div><div><b data-m>–</b><span>min</span></div>
+</div></div><p class="cd-done" hidden>Today's the day! Thank you all for taking part.</p>
+</div></div>
+<div class="wrap"><div class="facts"><div class="fact"><span class="k">Date</span><span class="v">Friday, 4 Dec 2026</span></div><div class="fact"><span class="k">Time</span><span class="v">9:30 am – 1:00 pm</span></div><div class="fact"><span class="k">Venue</span><span class="v">Pavelló 3 · Barcelona</span></div><div class="fact"><span class="k">Access</span><span class="v">Private event · Escola Virolai</span></div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>The event<span>What is Sport4All?</span></h2></div>
+<div class="grid" style="gap:clamp(24px,3vw,40px)">
+<div class="prose"><p>Sport4All was born in the classrooms of the <strong>Sports Management degree at Blanquerna – Universitat Ramon Llull</strong>. It is a real project, designed and run by students, with one clear goal: to let children discover adapted sport and experience inclusion first-hand.</p><p>The International Day of Persons with Disabilities is celebrated every <strong>3 December</strong>. We join in the following day, <strong>Friday 4 December</strong>, with a morning of play, cooperation and shared sport.</p><p><strong>54 Year 5 pupils from Escola Virolai</strong> take part, split into six teams. There are no eliminations: teams are scored mainly on teamwork, participation and inclusion.</p></div>
+<div class="nums"><div class="numb"><b>54</b><span>Year 5 pupils</span></div><div class="numb"><b>6</b><span>teams of 9 players</span></div><div class="numb"><b>3</b><span>inclusive activities</span></div><div class="numb"><b>35</b><span>people on the organising staff</span></div></div>
+<div class="panel"><p class="quote">“When everyone plays by the same rules, disability is no longer the first thing you see.”<small>Sport4All organising team</small></p></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Participants<span>Who's involved?</span></h2><p>A private event, designed for the school's pupils and made possible by university students.</p></div>
+<div class="grid grid-2"><article class="card tile t-coral"><h3>Escola Virolai pupils</h3><p>54 boys and girls in Year 5. They are the stars of the day: they play, cooperate and discover three inclusive activities.</p></article><article class="card tile t-granat"><h3>Sports Management students</h3><p>The organising team. We coordinate the activities, explain the rules, keep time and supervise the whole day.</p></article><article class="card tile t-taronja"><h3>Diploma students</h3><p>20 students from Fundació Blanquerna support the hands-on supervision of each activity and the equipment.</p></article><article class="card tile t-rosat"><h3>Sports Management volunteers</h3><p>6 students from the Sports Management class run the scoring system for every team.</p></article></div></div></div>
+
+<div class="section"><div class="wrap"><div class="band">
+<div><p class="k">The partnership</p><h2>University and school, on the same court</h2><p>Sport4All is run in partnership with <a href="https://virolai.com/" target="_blank" rel="noopener">Escola Virolai</a> in Barcelona. The school brings its pupils; the university brings the organisation and expertise in sports management and adapted sport.</p></div>
+<div class="partners"><div class="chip-logo white"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div><span class="x">+</span><a class="chip-logo" href="https://virolai.com/" target="_blank" rel="noopener">Escola Virolai<small>Barcelona</small></a></div>
+</div></div></div>
+
+<div class="section" id="en-equipo"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>The team<span>Who organises Sport4All</span></h2><p>Academic project of the Sports Management degree · Blanquerna Faculty of Psychology, Education and Sport Sciences.</p></div>
+<div class="grid" style="gap:clamp(16px,2vw,24px)">
+<div class="prof"><span class="av big">AB</span><div><span class="k">Lecturer</span><h3>Ariadna Benet</h3></div></div>
+<div><p class="k list-k">Student organisers</p><ul class="team"><li><span class="av">WF</span>Willy Fernández</li><li><span class="av">AM</span>Ainhoa Madoz</li><li><span class="av">ÀV</span>Àlex Valls</li><li><span class="av">CS</span>Carlos Saiz</li><li><span class="av">HO</span>Hugo Ortega</li><li><span class="av">IL</span>Ian Lobello</li><li><span class="av">JL</span>Jan Larregola</li><li><span class="av">MM</span>Mireia Martín</li><li><span class="av">IV</span>Ignasi Vilumara</li></ul></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">04</span><h2>Programme<span>The morning at a glance</span></h2><p>Three activities, three rounds and a closing ceremony with certificates for everyone.</p></div>
+<div><div class="mini-sched"><div><time>9:30</time><span>Welcome and registration</span></div><div><time>9:45</time><span>Competition briefing</span></div><div><time>10:15</time><span>Round 1</span></div><div><time>10:45</time><span>Round 2</span></div><div><time>11:15</time><span>Breakfast and break</span></div><div><time>11:45</time><span>Round 3</span></div><div><time>12:30</time><span>Certificates, awards and closing</span></div></div><a class="more" href="#en-programa">See the full programme →</a></div>
+</div></div></section>
+<section class="view" data-view="programa" id="en-programa" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Friday 4 December 2026 · 9:30 am – 1:00 pm</p><h1>01. Programme</h1><p class="lead">Schedule, competition format and the three activities of the morning. Times may shift by a few minutes on the day.</p>
+<div class="cover-foot"><span>Sport4All</span><span>Schedule and activities</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Schedule<span>Hour by hour</span></h2><p>Each round lasts 30 minutes: 5 to explain the activity and safety rules, 20 to play and 5 to record scores and rotate.</p></div><div class="timeline"><div class="slot"><div class="time">9:30<small>15 min</small></div><div><h3>Welcome and registration</h3><p>Pupils arrive and are organised into six teams.</p></div></div><div class="slot"><div class="time">9:45<small>30 min</small></div><div><h3>Competition briefing</h3><p>Rules, scoring system and rotations explained.</p></div></div><div class="slot key"><div class="time">10:15<small>30 min</small></div><div><h3>Round 1</h3><p>Each team starts at one of the three activities.</p></div></div><div class="slot key"><div class="time">10:45<small>30 min</small></div><div><h3>Round 2</h3><p>First rotation: teams move to a new activity.</p></div></div><div class="slot"><div class="time">11:15<small>30 min</small></div><div><h3>Breakfast and break</h3><p>Fruit, water and snacks for everyone. Time to rest and rehydrate.</p></div></div><div class="slot key"><div class="time">11:45<small>30 min</small></div><div><h3>Round 3</h3><p>Second rotation: every team completes all three activities.</p></div></div><div class="slot"><div class="time">12:15<small>15 min</small></div><div><h3>Score calculation</h3><p>The scoring team reviews and adds up the results.</p></div></div><div class="slot"><div class="time">12:30<small>30 min</small></div><div><h3>Closing and awards</h3><p>Certificates, awards and final standings.</p></div></div></div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Format<span>How the competition works</span></h2><p>54 participants, 6 teams of 9. Each team stays together all morning and completes all three activities.</p></div>
+<div class="grid" style="gap:24px">
+<div class="rotations"><table><thead><tr><th>Round</th><th>Goalball</th><th>Giant Ball Challenge</th><th>Build and Protect</th></tr></thead><tbody><tr><td>Round 1</td><td><span class="g">Team 1 – 2</span></td><td><span class="g">Team 3 – 4</span></td><td><span class="g">Team 5 – 6</span></td></tr><tr><td>Round 2</td><td><span class="g">Team 5 – 6</span></td><td><span class="g">Team 1 – 2</span></td><td><span class="g">Team 3 – 4</span></td></tr><tr><td>Round 3</td><td><span class="g">Team 3 – 4</span></td><td><span class="g">Team 5 – 6</span></td><td><span class="g">Team 1 – 2</span></td></tr></tbody></table></div>
+<p class="note">Indicative allocation. Three activities run at the same time, with two teams at each.</p>
+<div class="panel"><p class="k list-k">Common rules</p><ul class="checks"><li>Everyone plays an active role.</li><li>No eliminations.</li><li>Responsibilities are shared.</li><li>Respect for teammates, other teams and staff.</li><li>Activities are adapted to each participant.</li></ul></div>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>Activities<span>Three inclusive challenges</span></h2><p>All three put cooperation and communication ahead of the result.</p></div>
+<div class="grid" style="gap:clamp(16px,2vw,24px)">
+<div class="grid grid-3"><article class="card sport tile t-granat"><div class="top"><span class="zone">Zone 1</span></div><h3>Goalball</h3><p>A game with Paralympic roots. All players wear blindfolds and locate the ball by the sound of its bells.</p>
+<ul><li>Ball with bells, always rolled along the floor</li><li>Two 5-minute matches (5 v 5 and 4 v 4)</li><li>Court edges marked with a tactile rope</li></ul><p class="skills">Trust · listening · orientation</p></article><article class="card sport tile t-coral"><div class="top"><span class="zone">Zone 2</span></div><h3>Giant Ball Challenge</h3><p>Each team moves a giant ball along a course, passing it between teammates standing inside their hoops.</p>
+<ul><li>No talking: gestures and signals only</li><li>Hoops must be moved forward to advance</li><li>Two parallel lanes</li></ul><p class="skills">Non-verbal communication · coordination</p></article><article class="card sport tile t-taronja"><div class="top"><span class="zone">Zone 3</span></div><h3>Build and Protect</h3><p>Each team builds a defence around its basket while trying to throw soft balls into the other team's basket.</p>
+<ul><li>Cones, bibs and foam blocks</li><li>6 soft balls per team</li><li>Three players with a temporary vision or mobility restriction</li></ul><p class="skills">Accuracy · strategy · teamwork</p></article></div>
+<figure class="fig"><img src="pavello.jpg" alt="Layout of the three activities in Pavelló 3." loading="lazy"><figcaption>Layout of the three activities in Pavelló 3.</figcaption></figure>
+</div></div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">04</span><h2>Scoring<span>Winning isn't everything</span></h2><p>Each activity is worth 10 points. Winning adds just 1; the other 9 reward how the team plays.</p></div>
+<div class="panel score"><div class="srow"><div class="slabel"><span>Teamwork and communication</span><b>4 points</b></div><div class="sbar"><i style="width:40%"></i></div></div><div class="srow"><div class="slabel"><span>Participation and inclusion</span><b>3 points</b></div><div class="sbar"><i style="width:30%"></i></div></div><div class="srow"><div class="slabel"><span>Activity performance</span><b>2 points</b></div><div class="sbar"><i style="width:20%"></i></div></div><div class="srow"><div class="slabel"><span>Activity winner</span><b>1 point</b></div><div class="sbar"><i style="width:10%"></i></div></div><div class="stotal"><span>Total per activity</span><b>10 points</b></div></div>
+</div></div>
+
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">05</span><h2>Information<span>Before the day</span></h2></div><dl class="info-list"><div><dt>Date and time</dt><dd>Friday, 4 December 2026, 9:30 am – 1:00 pm.</dd></div><div><dt>Venue</dt><dd>Pavelló 3 · Barcelona.</dd></div><div><dt>Access</dt><dd>Private event for Year 5 pupils from Escola Virolai. Not open to the public.</dd></div><div><dt>What to bring</dt><dd>Sportswear, trainers and a water bottle. All equipment is provided.</dd></div><div><dt>Breakfast</dt><dd>Fruit, water and snacks will be handed out during the break.</dd></div><div><dt>Photos</dt><dd>Images of minors will only be published with the consent of the school and families.</dd></div></dl></div></div></section>
+<section class="view" data-view="organizacion" id="en-organizacion" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Academic project · Blanquerna – Universitat Ramon Llull</p><h1>02. Organisation</h1><p class="lead">35 people make Sport4All happen: student organisers, Diploma students and Sports Management volunteers.</p>
+<div class="cover-foot"><span>Sport4All</span><span>The people behind it</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Roles<span>Who does what</span></h2></div><div class="grid grid-3"><article class="card"><b class="bignum">9</b><h3>Organisers</h3><p>Sports Management students. They coordinate the activities, explain the rules, keep time and supervise the day.</p></article><article class="card"><b class="bignum">20</b><h3>Diploma students</h3><p>From Fundació Blanquerna. They supervise the practical side of the activities and help with equipment and logistics.</p></article><article class="card"><b class="bignum">6</b><h3>Sports Management volunteers</h3><p>They assess each team with an activity-specific rubric and record the scores.</p></article></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Areas<span>How the day is organised</span></h2><p>Each activity has a fixed team that does not rotate, so they know their station inside out.</p></div><div class="grid grid-3 areas"><article class="card"><span class="k">01</span><h3>Goalball</h3><p>4 Diploma students · 1 scoring volunteer · led by Mireia</p></article><article class="card"><span class="k">02</span><h3>Giant Ball Challenge</h3><p>4 Diploma students · 1 scoring volunteer · led by Ainhoa</p></article><article class="card"><span class="k">03</span><h3>Build and Protect</h3><p>4 Diploma students · 1 scoring volunteer · led by Ian</p></article><article class="card"><span class="k">04</span><h3>Welcome and registration</h3><p>Greeting pupils, registration and handing out materials at the start and end.</p></article><article class="card"><span class="k">05</span><h3>Breakfast</h3><p>During the break: handing out fruit, water and snacks.</p></article></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">03</span><h2>Mission<span>Why we do it</span></h2></div>
+<div class="grid" style="gap:clamp(24px,3vw,40px)"><div class="prose"><p>We want to <strong>raise the profile of adapted sport</strong> and <strong>break down prejudice from childhood</strong>, showing that a sports activity can be designed so that no one is left on the sidelines.</p><p>As future sports managers, we are also learning to build accessibility into events from day one, not as an afterthought.</p></div><div class="grid grid-2"><div class="card tile t-coral"><h3>Inclusion</h3><p>Every activity is designed for playing together.</p></div><div class="card tile t-granat"><h3>Participation</h3><p>Everyone has an active role. No eliminations.</p></div><div class="card tile t-taronja"><h3>Cooperation</h3><p>We score how the team plays, not just the result.</p></div><div class="card tile t-rosat"><h3>Learning</h3><p>Children discover adapted sport; university students learn by doing.</p></div></div></div></div></div>
+<div class="section"><div class="wrap"><div class="band">
+<div><p class="k">3 December</p><h2>Why the International Day of Persons with Disabilities?</h2><p>The United Nations proclaimed it in 1992 to promote the rights and well-being of persons with disabilities in every area of society, including sport. Celebrating it by playing together is our way of taking part.</p></div>
+<div class="partners"><div class="chip-logo plain day">3·12<small>Since 1992</small></div></div></div></div></div></section>
+<section class="view" data-view="patrocinadores" id="en-patrocinadores" hidden><div class="cover"><div class="wrap">
+<p class="kicker">Sponsors and partners</p><h1>03. Sponsors</h1><p class="lead">Thank you to the companies and organisations that support Sport4All and make it possible.</p>
+<div class="cover-foot"><span>Sport4All</span><span>Thank you for making it happen</span></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">01</span><h2>Sponsors<span>Supported by</span></h2></div><div class="grid grid-3"><div class="sponsor"><b>Mercat El Carmel</b><span>Municipal market · Barcelona</span></div><div class="sponsor"><b>Ruido</b><span>Sponsor</span></div><div class="sponsor"><b>Dental Horta</b><span>Dental clinic · Barcelona</span></div></div></div></div>
+<div class="section"><div class="wrap sec"><div class="sec-head"><span class="num">02</span><h2>Partners<span>Institutions</span></h2></div><div class="grid grid-2"><div class="sponsor"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"><span>Organising university</span></div><a class="sponsor" href="https://virolai.com/" target="_blank" rel="noopener"><b>Escola Virolai</b><span>Participating school</span></a></div></div></div>
+<div class="section"><div class="wrap"><div class="band"><div><h2>Want to support Sport4All?</h2><p>There is still time to add new sponsors and partners. If your company would like to support inclusive sport, get in touch with the organising team.</p></div></div></div></div></section>
+</main>
+<footer><div class="wrap"><div class="foot">
+<div><p class="big">One court.<br>For everyone.</p><p>Inclusive sports day · 4 December 2026 · International Day of Persons with Disabilities.</p></div>
+<div><h4>Sections</h4><ul><li><a href="#en-inicio">Home</a></li><li><a href="#en-programa">Programme</a></li><li><a href="#en-organizacion">Organisation</a></li><li><a href="#en-patrocinadores">Sponsors</a></li></ul></div>
+<div><h4>Organised by</h4><p style="margin-top:0">Sports Management students · Blanquerna Faculty of Psychology, Education and Sport Sciences – Universitat Ramon Llull.</p><div class="foot-logo"><img src="blanquerna.png" alt="Blanquerna – Universitat Ramon Llull"></div></div>
+</div><div class="fine"><span>Sport4All</span><span>Sport4All 2026</span><span>Academic project · Barcelona</span></div></div></footer>
+</div>
+<script>(function(){
+  var LANGS=["ca","es","en"], VIEWS=["inicio","programa","organizacion","patrocinadores"];
+  var lang="ca";
+  try{var s=localStorage.getItem("s4a-lang"); if(LANGS.indexOf(s)>=0) lang=s;}catch(e){}
+  if(LANGS.indexOf(lang)<0){var n=(navigator.language||"").slice(0,2); if(n==="es"||n==="en") lang=n;}
+  function route(){
+    var h=(location.hash||"").replace("#",""), view="inicio", anchor=null;
+    var m=h.match(/^(ca|es|en)-(.+)$/);
+    if(m){lang=m[1]; if(VIEWS.indexOf(m[2])>=0) view=m[2]; else {anchor=h; view="inicio";}}
+    try{localStorage.setItem("s4a-lang",lang);}catch(e){}
+    document.documentElement.lang=lang;
+    document.querySelectorAll(".lang-root").forEach(function(r){
+      var on=r.dataset.lang===lang; r.hidden=!on;
+      r.querySelectorAll(".view").forEach(function(s){s.hidden=s.dataset.view!==view;});
+      r.querySelectorAll(".nav a").forEach(function(a){ if(a.dataset.view===view) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");});
+    });
+    var el=anchor&&document.getElementById(anchor);
+    if(el) el.scrollIntoView(); else window.scrollTo(0,0);
+  }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-set-lang]"); if(!b) return;
+    var cur=(location.hash.match(/^#(?:ca|es|en)-(\w+)$/)||[])[1];
+    if(VIEWS.indexOf(cur)<0) cur="inicio";
+    location.hash=b.dataset.setLang+"-"+cur;
+  });
+  window.addEventListener("hashchange",route);
+  route();
+  // Cuenta atrás: 4 dic 2026, 9:30 Barcelona (UTC+1)
+  var target=Date.UTC(2026,11,4,8,30,0);
+  function tick(){
+    var ms=target-Date.now();
+    document.querySelectorAll("[data-cd]").forEach(function(box){
+      if(ms<=0){box.hidden=true; box.nextElementSibling.hidden=false; return;}
+      box.querySelector("[data-d]").textContent=Math.floor(ms/864e5);
+      box.querySelector("[data-h]").textContent=Math.floor(ms%864e5/36e5);
+      box.querySelector("[data-m]").textContent=Math.floor(ms%36e5/6e4);
+    });
+  }
+  tick(); setInterval(tick,30000);
+})();
+</script>
+</body>
+</html>
